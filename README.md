@@ -29,6 +29,12 @@ $ echo "<h1>My Title</h1>" | im -t "text/html"
 http://immut.io/blobs/e47c0803-3a8a-4269-bd98-2a7ffe0e59f2
 ```
 
+Copy uploaded to clipboard (OS X)
+
+```
+$ im myfile.jpg | pbcopy
+```
+
 
 Installation
 ------------
