@@ -42,7 +42,7 @@ Installation
 Easy
 
 ```
-$ curl -L immut.io/sh | sh
+$ curl -sL immut.io/sh | sh
 ````
 
 Almost as easy
