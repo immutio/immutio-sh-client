@@ -46,8 +46,16 @@ elif [ "$type" = "" ]
 fi
 
 
-# Upload the file and get the resulting relative path
-path=$(curl -sX POST http://immut.io/blobs --upload-file "$filename" -H "Content-Type: $type")
+# Upload the data and get the resulting relative path
+if [ -f "$filename" ]
+  then
+    # Upload the file
+    path=$(curl -sX POST http://immut.io/blobs --upload-file "$filename" -H "Content-Type: $type")
+else
+  # Upload contents of stdin
+  input=$(cat)
+  path=$(curl -sX POST http://immut.io/blobs -H "Content-Type: $type" -d "$input")
+fi 
 
 printf 'http://immut.io%s' "$path"
 
