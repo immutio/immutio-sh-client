@@ -51,6 +51,11 @@ if [ -f "$filename" ]
   then
     # Upload the file
     path=$(curl -sX POST http://immut.io/blobs --upload-file "$filename" -H "Content-Type: $type")
+elif [ -t 0 ]
+  then 
+    # Unrecognized input
+    show_help
+    exit 0
 else
   # Upload contents of stdin
   input=$(cat)
