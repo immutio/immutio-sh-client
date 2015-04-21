@@ -39,6 +39,14 @@ $ im myfile.jpg | pbcopy
 Installation
 ------------
 
+Easy
+
+```
+$ curl -L immut.io/sh | sh
+````
+
+Almost as easy
+
 ```
 $ curl https://raw.githubusercontent.com/immutio/immutio-sh-client/master/im.sh > /usr/local/bin/im && chmod +x /usr/local/bin/im
 ```
